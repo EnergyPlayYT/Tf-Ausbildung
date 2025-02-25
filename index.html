@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausbildungskalender EiB 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Stile für den Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            position: fixed; /* Fixiert den Footer am unteren Rand */
+            bottom: 0; /* Positioniert den Footer am unteren Rand */
+            left: 0;
+            right: 0;
+            background-color: var(--container-bg); /* Hintergrundfarbe des Containers */
+            padding: 10px;
+            border-top: 1px solid var(--dropdown-border); /* Obere Linie für den Footer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Schalter -->
+    <div class="theme-switcher">
+        <input type="checkbox" id="theme-toggle" class="theme-toggle">
+        <label for="theme-toggle" class="theme-label">
+            <span class="theme-icon">🌙</span> <!-- Moon Icon -->
+        </label>
+    </div>
+
+    <div class="container">
+        <!-- Banner mit "Tf-Ausbildung" -->
+        <div class="banner">
+            Ausbildungskalender EiB SSH/STR/SKL
+        </div>
+
+        <!-- Dropdown für Standortauswahl -->
+        <div class="location-selector">
+            <label for="location">Standort:</label>
+            <select id="location">
+                <option value="Saarbrücken">Saarbrücken - SSH</option>
+                <option value="Trier">Trier - STR</option>
+                <option value="Kaiserslautern">Kaiserslautern - SKL</option>
+            </select>
+        </div>
+
+        <!-- Monats- und Jahresanzeige mit Pfeilen -->
+        <div class="month-navigation">
+            <button id="prev-month" class="nav-button">←</button>
+            <h1 id="current-month-year">August 2024</h1>
+            <button id="next-month" class="nav-button">→</button>
+        </div>
+
+        <!-- Kalender -->
+        <div class="calendar-grid">
+            <!-- Wochentage -->
+            <div class="weekdays">
+                <div>Mo</div>
+                <div>Di</div>
+                <div>Mi</div>
+                <div>Do</div>
+                <div>Fr</div>
+                <div>Sa</div>
+                <div>So</div>
+            </div>
+
+            <!-- Kalendertage -->
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Haftungsausschluss -->
+    <footer>
+        Ich übernehme keine Haftung für die Korrektheit der Angaben.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

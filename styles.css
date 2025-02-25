@@ -1,0 +1,290 @@
+/* Allgemeine Stile */
+:root {
+    --background-color: #f4f4f4; /* Light Mode Hintergrund */
+    --text-color: #333; /* Light Mode Textfarbe */
+    --container-bg: #fff; /* Light Mode Container-Hintergrund */
+    --banner-bg: red;
+    --banner-text: white;
+    --day-bg: #fff;
+    --day-hover-bg: #f0f0f0;
+    --weekend-bg: #e0e0e0;
+    --button-bg: #fff;
+    --button-hover-bg: #f0f0f0;
+    --dropdown-bg: #fff;
+    --dropdown-border: #ccc;
+    --dropdown-hover-border: #089ac9;
+    --dropdown-focus-shadow: rgba(8, 154, 201, 0.5);
+}
+
+[data-theme="dark"] {
+    --background-color: #1b2338; /* Dark Mode Hintergrund */
+    --text-color: #fff; /* Dark Mode Textfarbe (weiß) */
+    --container-bg: #2a3248; /* Dark Mode Container-Hintergrund */
+    --banner-bg: #ff4d4d;
+    --banner-text: #fff;
+    --day-bg: #2a3248; /* Dunkler Hintergrund für Kalendertage */
+    --day-hover-bg: #3a4258; /* Dunklerer Hintergrund beim Hover */
+    --weekend-bg: #3a4258; /* Dunklerer Hintergrund für Wochenenden */
+    --button-bg: #2a3248;
+    --button-hover-bg: #3a4258;
+    --dropdown-bg: #2a3248;
+    --dropdown-border: #3a4258;
+    --dropdown-hover-border: #089ac9;
+    --dropdown-focus-shadow: rgba(8, 154, 201, 0.5);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Banner-Stile */
+.banner {
+    background-color: var(--banner-bg);
+    color: var(--banner-text);
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Stile für den Standort-Button */
+.location-selector {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.location-selector label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.location-selector select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid var(--dropdown-border);
+    border-radius: 8px;
+    background-color: var(--dropdown-bg);
+    appearance: none; /* Entfernt den Standard-Pfeil */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-selector select:hover {
+    border-color: var(--dropdown-hover-border);
+}
+
+.location-selector select:focus {
+    border-color: var(--dropdown-hover-border);
+    box-shadow: 0 0 8px var(--dropdown-focus-shadow);
+    outline: none;
+}
+
+/* Custom Dropdown-Pfeil */
+.location-selector::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--dropdown-hover-border);
+    font-size: 12px;
+}
+
+/* Dark Mode Schalter */
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle {
+    display: none; /* Versteckt das Standard-Checkbox-Element */
+}
+
+.theme-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-label:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--dropdown-hover-border);
+}
+
+.theme-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Animation für das Icon */
+.theme-toggle:checked + .theme-label .theme-icon {
+    transform: rotate(360deg);
+    content: "☀️"; /* Sun Icon */
+}
+
+/* Monatsnavigation */
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--button-bg);
+}
+
+.nav-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Wochentage */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.weekdays div {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Kalender-Stile */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    padding: 10px;
+    border: 1px solid var(--dropdown-border);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    background-color: var(--day-bg);
+    color: var(--text-color); /* Dynamische Schriftfarbe basierend auf dem Theme */
+}
+
+/* Schriftumrandung nur im Dark Mode */
+[data-theme="dark"] .day {
+    text-shadow: 
+        -1px -1px 0 var(--background-color),  
+         1px -1px 0 var(--background-color),
+        -1px  1px 0 var(--background-color),
+         1px  1px 0 var(--background-color); /* Dünne Umrandung in der Hintergrundfarbe */
+}
+
+.day:hover {
+    background-color: var(--day-hover-bg);
+}
+
+/* Samstage und Sonntage grau hinterlegen */
+.day:nth-child(7n),
+.day:nth-child(7n - 1) {
+    background-color: var(--weekend-bg);
+    font-weight: bold;
+}
+
+.event {
+    font-size: 10px;
+    color: var(--text-color); /* Dynamische Schriftfarbe basierend auf dem Theme */
+    margin-top: 5px;
+}
+
+/* Responsive Anpassungen für Mobilgeräte */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .banner {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .month-navigation h1 {
+        font-size: 18px;
+    }
+
+    .nav-button {
+        font-size: 18px;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .weekdays div {
+        font-size: 12px;
+    }
+
+    .day {
+        height: 40px;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .event {
+        font-size: 8px;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+    }
+}
