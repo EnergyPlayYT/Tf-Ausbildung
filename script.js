@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "2025-06-26": "Berufsschule",
             "2025-06-27": "Berufsschule",
             "2025-06-30": "Modul B4.3.1",
-            "2025-07-01": "LEK 2",
+            "2025-07-01": "Bb1570",
             "2025-07-02": "Bb1570",
             "2025-07-03": "Modul B4.4",
             "2025-07-04": "Modul B4.4",
@@ -270,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "2025-07-22": "Lernfahrt 5 / QZ",
             "2025-07-23": "Lernfahrt 5 / QZ",
             "2025-07-24": "Wdh. B Module",
+            "2025-07-25": "LEK 2"
         },
         "Kaiserslautern": {
             "2024-08-22": "Begrüßung",
@@ -487,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "2025-06-26": "Berufsschule",
             "2025-06-27": "Berufsschule",
             "2025-06-30": "Modul B4.3.1",
-            "2025-07-01": "LEK 2",
+            "2025-07-01": "Bb1570",
             "2025-07-02": "Bb1570",
             "2025-07-03": "Modul B4.4",
             "2025-07-04": "Modul B4.4",
@@ -504,7 +505,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "2025-07-21": "Wdh B Module",
             "2025-07-22": "Lernfahrt 5 / QZ",
             "2025-07-23": "Lernfahrt 5 / QZ",
-            "2025-07-24": "Wdh. B Module"
+            "2025-07-24": "Wdh. B Module",
+            "2025-07-25": "LEK 2"
         }
     };
     
