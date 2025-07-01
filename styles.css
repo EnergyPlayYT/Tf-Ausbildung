@@ -234,8 +234,7 @@ body {
 }
 
 /* Samstage und Sonntage grau hinterlegen */
-.day:nth-child(7n),
-.day:nth-child(7n - 1) {
+.day.weekend {
     background-color: var(--weekend-bg);
     font-weight: bold;
 }

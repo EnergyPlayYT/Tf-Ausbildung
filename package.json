@@ -1,0 +1,17 @@
+{
+  "name": "tf-ausbildung",
+  "version": "1.0.0",
+  "description": "Static schedule for Tf training",
+  "scripts": {
+    "build": "echo 'No build step'",
+    "test": "node --check script.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "canvas": "^3.1.2",
+    "firebase-admin": "^13.4.0",
+    "react-scripts": "^5.0.1"
+  }
+}
