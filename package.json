@@ -1,0 +1,12 @@
+{
+  "name": "tf-ausbildung",
+  "version": "1.0.0",
+  "description": "Static schedule for Tf training",
+  "scripts": {
+    "build": "echo 'No build step'",
+    "test": "node --check script.js"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
